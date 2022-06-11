@@ -138,7 +138,20 @@ for i in range(1, 501): # 숫자 이미지 2에 대해서 500개의 Training set
     x_2_set = np.concatenate((x_2_set, x_feature_2), axis=0)
 
 
+# ANN 입력 데이터 생성
+kind_of_num = 3 # 분류 숫자의 수
+num_data = 500 # 각 숫자 데이터의 수
+num_features = 5 # 특징의 수
 
+# ANN 입력 데이터
+ANN_input_data = np.zeros((kind_of_num * num_data, num_features))
+for n in range(kind_of_num * num_data):
+    if 0 <= n < 500:
+        ANN_input_data[n] = x_0_set[n]
+    elif 500 <= n < 1000:
+        ANN_input_data[n] = x_1_set[n - 500]
+    elif 1000 <= n < 1500:
+        ANN_input_data[n] = x_2_set[n - 1000]
 
 
 

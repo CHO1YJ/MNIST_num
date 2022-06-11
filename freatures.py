@@ -224,4 +224,3 @@ for i in range(1, 501): # 숫자 이미지 2에 대해서 500개의 Training set
 
 
 
-
